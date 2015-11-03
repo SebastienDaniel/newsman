@@ -1,0 +1,35 @@
+{
+  "name": "newsman",
+  "description": "Report events, alerts and confirmations to the UI, in the browser.",
+  "keywords": [
+    "browser",
+    "report",
+    "alert",
+    "prompt",
+    "confirm",
+    "messaging"
+  ],
+  "version": "1.0.2",
+  "author": {
+    "name": "Sebastien Daniel",
+    "email": "info@sebastiendaniel.ca",
+    "url": "http://www.sebastiendaniel.ca/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SebastienDaniel/newsman"
+  },
+  "bugs": {
+    "url": "https://github.com/SebastienDaniel/newsman/issues"
+  },
+  "license": "MIT",
+  "main": "src/scripts/newsman.js",
+  "private": false,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-jscs": "^2.2.0",
+    "grunt-jsdoc": "^1.0.0",
+    "load-grunt-config": "^0.17.2"
+  }
+}

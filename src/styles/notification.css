@@ -1,0 +1,21 @@
+.newsman__notification {
+    position: fixed;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    bottom: 0;
+    width: 220px;
+    height: 60px;
+    background-color: #424242;
+    border-radius: 2px 0 0 2px;
+    color: #ffffff;
+    z-index: 10000;
+    transition: all 0.35s ease;
+}
+
+.newsman__notification.isInactive {
+    right: -225px;
+}
+
+.newsman__notification.isActive {
+    right: 0;
+}
