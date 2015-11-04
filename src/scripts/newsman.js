@@ -85,7 +85,7 @@ function Notification(msg) {
      */
     this.container = document.createElement("div");
     this.container.className = "newsman__notification isInactive";
-    this.container.textContent = msg + " " + cache.notifications.length;
+    this.container.textContent = msg.slice(0, 120);
     this.t1 = window.setTimeout(this.die.bind(this), config.notificationDuration);
     this.t2 = window.setTimeout(this.activate.bind(this), 10);
 }
@@ -243,7 +243,7 @@ module.exports.alert = function(msg, cb) {
     var w;
     if (cache.newsmanWindow === null) {
         w = new Alert(cb);
-        w.content.textContent = msg.slice(0, 120);
+        w.content.textContent = msg;
         w.acceptButton.textContent = "ok";
 
         renderNewsmanWindow(w);
@@ -264,7 +264,7 @@ module.exports.confirm = function(msg, cb) {
     var w;
     if (cache.newsmanWindow === null) {
         w = new Confirm(cb);
-        w.content.textContent = msg.slice(0, 120);
+        w.content.textContent = msg;
         w.acceptButton.textContent = "ok";
         w.refuseButton.textContent = "cancel";
 
