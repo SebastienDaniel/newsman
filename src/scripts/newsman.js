@@ -26,7 +26,9 @@ function newsmanWindowListener(e) {
 
     if (e.target === cache.newsmanWindow.acceptButton || e.target === cache.newsmanWindow.refuseButton) {
         // trigger callback
-        cache.newsmanWindow.cb(e.target === cache.newsmanWindow.acceptButton);
+        if (cache.newsmanWindow.cb) {
+            cache.newsmanWindow.cb(e.target === cache.newsmanWindow.acceptButton);
+        }
 
         // remove listener
         cache.newsmanWindow.container.removeEventListener("click", newsmanWindowListener, true);
