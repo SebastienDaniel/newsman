@@ -240,13 +240,14 @@ module.exports.notify = function(msg) {
  *
  * @param {string} msg - message to inject into the alert window
  * @param {function} cb - callback triggered on alert button click
+ * @param {string} [ok="ok"] - override "ok button" text
  */
-module.exports.alert = function(msg, cb) {
+module.exports.alert = function(msg, cb, ok) {
     var w;
     if (cache.newsmanWindow === null) {
         w = new Alert(cb);
-        w.content.textContent = msg;
-        w.acceptButton.textContent = "ok";
+        w.content.innerHTML = msg;
+        w.acceptButton.textContent = ok || "ok";
 
         renderNewsmanWindow(w);
         return true;
@@ -261,14 +262,16 @@ module.exports.alert = function(msg, cb) {
  *
  * @param {string} msg - message to inject into confirm window
  * @param {function} cb - callback function triggered when confirm is accepted or rejected.
+ * @param {string} [ok="ok"] - override ok button text
+ * @param {string} [cancel="cancel"] - override cancel button text
  */
-module.exports.confirm = function(msg, cb) {
+module.exports.confirm = function(msg, cb, ok, cancel) {
     var w;
     if (cache.newsmanWindow === null) {
         w = new Confirm(cb);
-        w.content.textContent = msg;
-        w.acceptButton.textContent = "ok";
-        w.refuseButton.textContent = "cancel";
+        w.content.innerHTML = msg;
+        w.acceptButton.textContent = ok || "ok";
+        w.refuseButton.textContent = cancel || "cancel";
 
         renderNewsmanWindow(w);
         return true;
