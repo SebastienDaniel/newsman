@@ -185,7 +185,7 @@ function Alert(cb) {
         acceptButton: {
             value: (function() {
                 var acceptButton = document.createElement("div");
-                acceptButton.className = "newsman__button";
+                acceptButton.className = "newsman__button newsman__button--accept";
 
                 return acceptButton;
             }()),
@@ -215,7 +215,7 @@ function Confirm(cb) {
         refuseButton: {
             value: (function() {
                 var refuseButton = document.createElement("div");
-                refuseButton.className = "newsman__button";
+                refuseButton.className = "newsman__button newsman__button--refuse";
 
                 return refuseButton;
             }()),
